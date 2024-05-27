@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165ABD232C04EDA9007F233C /* FeedCellSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165ABD222C04EDA9007F233C /* FeedCellSwiftUIView.swift */; };
 		9201FAF92C029C2400C8A6C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9201FAF82C029C2400C8A6C5 /* Extensions.swift */; };
 		9294812B2C03E27500116239 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294812A2C03E27500116239 /* DetailsView.swift */; };
 		9294812D2C03EB4B00116239 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294812C2C03EB4B00116239 /* DetailsViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0952D5E63B2E5570D1A3FC6C /* Pods-Pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.debug.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.debug.xcconfig"; sourceTree = "<group>"; };
+		165ABD222C04EDA9007F233C /* FeedCellSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellSwiftUIView.swift; sourceTree = "<group>"; };
 		9201FAF82C029C2400C8A6C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9294812A2C03E27500116239 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		9294812C2C03EB4B00116239 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				92A794112C0139F20090AB8C /* FeedView.swift */,
 				92A794132C014BBD0090AB8C /* FeedCell.swift */,
+				165ABD222C04EDA9007F233C /* FeedCellSwiftUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				92A794162C014F580090AB8C /* Service.swift in Sources */,
 				92A794102C0133850090AB8C /* Bindable.swift in Sources */,
 				92A793FC2C01311E0090AB8C /* FeedViewController.swift in Sources */,
+				165ABD232C04EDA9007F233C /* FeedCellSwiftUIView.swift in Sources */,
 				92A793F82C01311E0090AB8C /* AppDelegate.swift in Sources */,
 				9294812B2C03E27500116239 /* DetailsView.swift in Sources */,
 				92A7941A2C0152400090AB8C /* Pokemon.swift in Sources */,
