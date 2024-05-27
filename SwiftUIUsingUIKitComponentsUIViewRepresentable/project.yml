@@ -1,0 +1,19 @@
+
+name: Pokedex
+packages:
+  SDWebImageSwiftUI:
+    url: https://github.com/SDWebImage/SDWebImageSwiftUI.git
+    from: 3.0.0
+targets:
+  Pokedex:
+    type: application
+    platform: visionOS
+    sources:
+      - path: Pokedex/
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1,2,7"
+        INFOPLIST_FILE: Pokedex/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.pokedex
+    dependencies:
+      - package: SDWebImageSwiftUI
