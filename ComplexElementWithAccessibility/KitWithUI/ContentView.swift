@@ -7,16 +7,28 @@
 
 import SwiftUI
 
+enum FocusedView: Hashable {
+    case closing, alerts, change, location, weather, article
+}
+
 struct ContentView: View {
+    @AccessibilityFocusState var focus: FocusedView?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             HStack {
-                Button("CLOSINGS (24)") {}
+                Button("CLOSINGS (24)") {
+                    focus = .change
+                }
                     .tint(.red)
                     .buttonStyle(.borderedProminent)
-                Button("ALERTS (24)") {}
-                    .tint(.red)
-                    .buttonStyle(.borderedProminent)
+                    .accessibilityFocused($focus, equals: .closing)
+                Button("ALERTS (24)") {
+                    focus = .article
+                }
+                .tint(.red)
+                .buttonStyle(.borderedProminent)
+                .accessibilityFocused($focus, equals: .alerts)
             }
             Text("SACRAMENTO, CA 94203")
                 .foregroundColor(.white)
@@ -28,6 +40,7 @@ struct ContentView: View {
                 .tint(.gray)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
+                .accessibilityFocused($focus, equals: .change)
                 
                 
                 Button {} label: {
@@ -37,6 +50,7 @@ struct ContentView: View {
                 .tint(.gray)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
+                .accessibilityFocused($focus, equals: .location)
             }
             HStack(spacing: 30) {
                 HStack(alignment: .lastTextBaseline) {
@@ -48,7 +62,8 @@ struct ContentView: View {
                 }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel("56 fahrenheit degrees")
-
+                .accessibilityFocused($focus, equals: .weather)
+                
                 HStack(alignment: .center) {
                     Image(systemName: "sun.max")
                         .font(.system(size: 40))
@@ -91,7 +106,8 @@ struct ContentView: View {
                 Text("Mountain snow diminishes Wednesday")
                     .montSerratRegular(size: 26)
                     .foregroundColor(.white)
-
+                    .accessibilityFocused($focus, equals: .article)
+                
                 Rectangle()
                     .frame(height: 1)
                     .tint(.white)
@@ -112,9 +128,9 @@ struct ContentView: View {
         }
         .padding()
         .background(
-                Image("bg_weather_sunny")
-                    .resizable()
-            )
+            Image("bg_weather_sunny")
+                .resizable()
+        )
     }
 }
 
