@@ -46,6 +46,9 @@ struct ContentView: View {
                         .montSerratBold(size: 22)
                         .tint(.white)
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("56 fahrenheit degrees")
+
                 HStack(alignment: .center) {
                     Image(systemName: "sun.max")
                         .font(.system(size: 40))
@@ -75,26 +78,37 @@ struct ContentView: View {
             }
             .buttonStyle(.borderedProminent)
             .tint(.gray)
-            Text("By Ben Frechette")
-                .montSerratBold(size: 16)
-                .foregroundColor(.white)
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(systemName: "brain.head.profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                    Text("By Ben Frechette")
+                        .montSerratBold(size: 16)
+                        .foregroundColor(.white)
+                }
+                Text("Mountain snow diminishes Wednesday")
+                    .montSerratRegular(size: 26)
+                    .foregroundColor(.white)
 
-            Text("Mountain snow diminishes Wednesday")
-                .montSerratRegular(size: 26)
-                .foregroundColor(.white)
-
-            Rectangle()
-                .frame(height: 1)
-                .tint(.white)
-            HStack {
-                Image(systemName: "playstation.logo")
-                    .foregroundStyle(.black)
-                    .font(.system(size: 30))
-                Spacer()
-                Image(systemName: "square.and.arrow.up.fill")
-                    .foregroundStyle(.black)
-                    .font(.system(size: 30))
+                Rectangle()
+                    .frame(height: 1)
+                    .tint(.white)
+                HStack {
+                    Image(systemName: "playstation.logo")
+                        .foregroundStyle(.black)
+                        .font(.system(size: 30))
+                    Spacer()
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.black)
+                        .font(.system(size: 30))
+                }
             }
+            .padding()
+            .background(
+                Color(.gray.withAlphaComponent(0.5))
+            )
         }
         .padding()
         .background(
