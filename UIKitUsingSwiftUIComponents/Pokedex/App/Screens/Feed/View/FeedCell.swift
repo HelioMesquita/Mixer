@@ -23,15 +23,14 @@ class FeedCell: UICollectionViewCell {
     
     func configure(pokemon: Pokemon) {
         guard hostingController == nil else { return }
-        let hostingController = UIHostingController(rootView: FeedCellSwiftUIView(pokemon: pokemon))
-//        hostingController.sizingOptions = [.intrinsicContentSize]
+        let hostingController = UIHostingController(rootView: FeedCellSwiftUIView(pokemon: pokemon, out: { text in
+            print(text)
+        }))
         let swiftuiView = hostingController.view!
         swiftuiView.backgroundColor = .clear
         swiftuiView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(swiftuiView)
         NSLayoutConstraint.activate([
-//            swiftuiView.widthAnchor.constraint(equalTo: widthAnchor),
-//            swiftuiView.heightAnchor.constraint(equalTo: heightAnchor),
             swiftuiView.leadingAnchor.constraint(equalTo: leadingAnchor),
             swiftuiView.trailingAnchor.constraint(equalTo: trailingAnchor),
             swiftuiView.topAnchor.constraint(equalTo: topAnchor),

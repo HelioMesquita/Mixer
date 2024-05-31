@@ -12,6 +12,7 @@ struct FeedCellSwiftUIView: View {
     
     @State var pokemon: Pokemon
     @State var backgroundColor = Color.clear
+    var out: (String) -> Void
     
     var body: some View {
         HStack {
@@ -29,6 +30,11 @@ struct FeedCellSwiftUIView: View {
                     .clipped()
                 Text(pokemon.name.capitalized)
                     .font(.title3)
+                Button(action: {
+                    out("hello world")
+                }, label: {
+                    Text("Button")
+                })
             }
             .padding(.top, 5)
             .padding(.bottom, 5)
@@ -43,6 +49,6 @@ struct FeedCellSwiftUIView: View {
     
 }
 
-#Preview {
-    FeedCellSwiftUIView(pokemon: Pokemon(name: "Pikachu", url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/2.png"))
-}
+//#Preview {
+//    FeedCellSwiftUIView(pokemon: Pokemon(name: "Pikachu", url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/2.png"))
+//}
